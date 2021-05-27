@@ -5,13 +5,18 @@
     justify-content: center;
 
     display: grid;
-    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+    grid-template-rows: 1fr repeat(2, min-content) 1fr;
+    // grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
     // grid-template-columns: minmax(min-content, max-content);
     // grid-template-columns: max-content;
     gap: 1.5rem;
 
     padding: 8rem;
     padding-top: 4rem;
+
+    @media screen and (max-width:$bp-small) {
+        padding: 5rem;
+    }
 
     &__logo {
         height: 3rem;
@@ -39,8 +44,10 @@
 
     &__reference-logos {
         display: grid;
-        grid-template-columns: repeat(4, minmax(min-content, 1fr));
+        // grid-template-columns: repeat(4, minmax(min-content, 1fr));
+        grid-template-columns: repeat(4, 1fr);
         justify-items: center;
+        align-items: center;
         column-gap: 3rem;
 
         &>img {

@@ -11,12 +11,21 @@
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(6, 1fr);
 
+        @media screen and (max-width:$bp-medium) {
+            padding: 6rem;
+        }
+
     }
 
     &__img--1 {
         width: 100%;
         grid-area: 2/2/6/6;
         box-shadow: 0 1rem 3rem rgba(#000, .2);
+
+        @media screen and (max-width:$bp-medium) {
+            grid-area: 1/1/-1/5;
+            width: 100%;
+        }
     }
 
     &__img--2 {
@@ -24,6 +33,11 @@
         z-index: 20;
         grid-area: 4/4/6/7;
         box-shadow: 0 2rem 5rem rgba(#000, .25);
+
+        @media screen and (max-width:$bp-medium) {
+            width: 100%;
+            grid-area: 3/4/6/7;
+        }
     }
 
     &__content {
@@ -39,6 +53,10 @@
         display: grid;
         align-content: center;
         justify-items: start;
+
+        @media screen and (max-width:$bp-medium) {
+            padding: 4rem;
+        }
     }
 
     &__text {

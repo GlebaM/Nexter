@@ -3,23 +3,51 @@
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content)[row-ends];
     // grid-template-rows: [head-start] 80vh [head-end feature-start] min-content [feature-end story-start] 40vw [story-end] repeat(3, [row-start] min-content[row-end]);
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [main-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [main-end] minmax(6rem, 1fr) [full-end];
+
+    @media screen and (max-width:$bp-large) {
+        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content)[row-ends];
+        // grid-template-rows: [sidebar-start] 6rem [sidebar-end head-start] 80vh [head-end feature-start] min-content [feature-end story-start] 40vw [story-end] repeat(3, [row-start] min-content[row-end]);
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [main-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [main-end] minmax(6rem, 1fr) [full-end];
+    }
+
+    @media screen and (max-width:$bp-medium) {
+        grid-template-rows: 6rem calc(100vh - 6rem);
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [main-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [main-end] minmax(6rem, 1fr) [full-end];
+
+    }
 }
 
 .sidebar {
-    // grid-area: 1/1/-1/2;
+    grid-area: 1/1/-1/2;
+
     // grid-area: head-start / sidebar-start / row-end 3 / sidebar-end;
-    grid-area: 1/ sidebar-start / -1 / sidebar-end;
+    // grid-area: 1/ sidebar-start / -1 / sidebar-end;
+    @media screen and (max-width:$bp-large) {
+        // grid-area: sidebar-start / full-start / sidebar-end / full-end;
+        grid-area: 1/1/2/-1;
+    }
 }
 
 .header {
     // grid-area: 1/2/2/9;
     // grid-area: head-start / full-start / head-end / col-end 6;
-    grid-area: 1 / full-start / 2 / col-end 6;
+    // grid-area: 1 / full-start / 2 / col-end 6;
+    grid-column: full-start / col-end 6;
+
+    @media screen and (max-width:$bp-medium) {
+        grid-column: full-start / full-end;
+    }
 }
 
 .realtors {
     // grid-area: head-start / col-start 7 / head-end / full-end;
-    grid-area: 1 / col-start 7 / 2 / full-end;
+    // grid-area: 1 / col-start 7 / 2 / full-end;
+    grid-column: col-start 7 / full-end;
+
+    @media screen and (max-width:$bp-medium) {
+        grid-column: full-start / full-end;
+    }
+
 }
 
 .features {
@@ -29,28 +57,43 @@
 }
 
 .story {
+
     &__pictures {
         // grid-area: story-start/full-start/story-end/col-end 4;
-        grid-area: 3/full-start/4/col-end 4;
+        // grid-area: 3/full-start/4/col-end 4;
+        grid-column: full-start / col-end 4;
+
+        @media screen and (max-width:$bp-medium) {
+            grid-column: 1/-1;
+        }
     }
 
     &__content {
         // grid-area: story-start/col-start 5/story-end/full-end;
-        grid-area: 3/col-start 5/4/full-end;
+        // grid-area: 3/col-start 5/4/full-end;
+        grid-column: col-start 5 / full-end;
+
+        @media screen and (max-width:$bp-medium) {
+            grid-column: 1 / -1;
+            grid-row: 5/6;
+        }
     }
 }
 
 .homes {
     // grid-area: row-start 1/ main-start / row-end 1 / main-end;
-    grid-area: 4/ main-start / 5/ main-end;
+    // grid-area: 4/ main-start / 5/ main-end;
+    grid-column: main-start / main-end;
 }
 
 .gallery {
     // grid-area: row-start 2/full-start / row-end 2 / full-end;
-    grid-area: 5/full-start /6/ full-end;
+    // grid-area: 5/full-start /6/ full-end;
+    grid-column: full-start / full-end;
 }
 
 .footer {
     // grid-area: row-start 3/full-start / row-end 3 / full-end;
-    grid-area: 6 / full-start / 7 / full-end;
+    // grid-area: 6 / full-start / 7 / full-end;
+    grid-column: full-start / full-end;
 }

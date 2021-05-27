@@ -5,6 +5,10 @@
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 7rem;
 
+    @media screen and (max-width:$bp-small) {
+        margin: 8rem 0;
+        gap: 5rem;
+    }
 }
 
 .home {
@@ -15,6 +19,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 3.5rem;
+
+    @media screen and (max-width:$bp-small) {}
 
     &__img {
         width: 100%;

@@ -4,10 +4,15 @@
     display: grid;
     // grid-template-columns: repeat(3, minmax(25rem, 1fr));
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    // grid-template-rows: repeat(2, [row-start] 1fr [row-end]); Nie ma takiej potrzeby żeby definiować wiersz
+    // grid-template-rows: repeat(2, [row-start] 1fr [row-end]); Nie ma takiej potrzeby żeby definiować wiersze
     // grid-template-rows: auto auto;
     gap: 6rem;
     align-items: start;
+
+    @media screen and (max-width:$bp-small) {
+        gap: 5rem;
+        margin: 8rem 0;
+    }
 }
 
 .feature {
@@ -24,7 +29,6 @@
         width: 4.5rem;
         height: 4.5rem;
         transform: translateY(-1rem);
-
     }
 
     &__text {
