@@ -1,0 +1,28 @@
+.btn {
+    padding: 1.8rem 3rem;
+
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-family: $font-display;
+    color: #fff;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color .15s;
+
+    &:hover {
+        background-color: $color-primary-dark;
+    }
+
+    &--home {
+        grid-column: 1/-1;
+        padding: 1.8rem auto;
+    }
+
+    &--align {
+        justify-self: flex-start;
+        align-self: flex-start;
+    }
+
+}
